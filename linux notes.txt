@@ -1,0 +1,131 @@
+mithuntechnologies.com/devops/DevOpsToolsMithunTechnologies.html
+----------------------------------------------------------------
+
+* To work in Linux server we will use some pre-requisite softwares.
+-->SSH tools (Secure Shell)
+1)Putty
+2)Super putty
+Note: if we are using windows it is necessary to install either one of these SSH tools. 
+      it is not necessary when we use MacBook. because there will be a in-built SSH tool called "Terminal" in MacBook.
+* By using these SSH tools we can connect to any remote server(even if it is in USA). for that we need IP Address/Host name,
+User id and Password of server which we want to connect.
+* And also we can execute commands, install softwares, create folders after connecting to the server by using these SSH Tools.
+-->FTP Tools (File Transfer Protocal)
+1)WinSCP(Windows Secure copy)-only works in Windows OS.
+2)FileZilla-works in any OS.
+* if we want to upload files into the server or to download files from the server these FTP tools are useful.
+
+Introduction To Linux:-
+-----------------------
+*Linux Started around 1991 by Linus Torlvads.
+*it is multi user OS. N number of users can access this Linux OS at a time..
+*it is also Multi tasking OS. N number of tasks can perform in this Linux OS at a time..
+*Linux is Open Source. means we can see the source code of OS and also we can customize that Source code.
+*Linux is Case sensitive. we should enter commands in lower case letters.
+*Linux has some distributions(flavours). 1)Redhat 2)CentOS 3)Ubuntu. etc.,
+
+Linux File Structure:-
+----------------------
+*In linux we are having directories as folders in windows.
+*In Linux, / is the root directory or Parent directory.
+*this root directory is having some sub directories... eg. Home(Users), bin(binary files)- in linux each command is having
+a binary file. for eg. ls, mkdir, cd etc., sbin(system bin)- it also contains binary files. for eg. useradd, userdel, shut
+down etc.,
+
+different types of users in Linux.
+* Admin/root/super user
+* Normal Users-these normal users will create by root user.
+* System users-these users will create by installing any softwares. for eg. if we install Jenkins in system, then it will 
+automatically create a user named with jenkins.
+
+Note: binary files in both bin and sbin directories can accessible by root user. but the normal users and system users can
+access the binary files which are in bin directory only.
+
+*etc is the another directory in Linux. it contains all the configuration files shown below.
+	sudoers
+	sshd_config
+	profile
+	shadow
+	group
+	passwd
+	motd-message of the day.
+note: passwd and shadow directories contains the all user directories.
+*lib is the another directory in linux. it contains library files.
+*proc is also a directory in linux. in linux, for each task it is going to create a process id. those id's are going to 
+store in this proc directory.
+*cpuinfo is a directory in linux. it contains cpu information.
+*meminfo is a directory. it contains memory information.
+*opt is also a directory as program files in windows. each and every application or third party software which we install 
+in linux server is going to store in "opt" directory.
+*tmp is also a directory. which is accessible by every user. for eg. if any user wants to share the data with another user 
+directly he can't access another user files.. so the user1 share the data to tmp directory and then the user2 share the data
+from tmp directory.
+*var is also a directory. system lock files are going to store in this var directory.
+*dev is also a directory. we can attach n no. of devices like hard disks, printers etc., these connected devices information 
+is going to store in "dev" directory.
+
+https://console.aws.amazon.com/- Register in AWS.
+
+create EC2 instance.
+
+convert from pem to ppk file.
+for steps open the link- https://www.youtube.com/watch?v=0CGokKoVpJY
+
+Linux Commands:
+---------------
+cd, mkdir, rmdir, ls, sudo su -, (-v, -p, -l, -a, -lh)along with ls, tree, cd .., -lt, -ltr, pwd, uname, clear, exit,
+
+*imp--> What is Inode?
+	Inode is a datastructure, it can store the file/directory information(permissions, links, ownername, group name, size,
+	timestamp). it doesn't contain file/directory name.
+
+cd ~ --> go to home directory.
+rmdir --> to remove single empty directory.
+rm -rf --> to remove all non-empty directories 
+rm -f --> to remove files.
+mkdir --> to create directory/file.
+ls --> to list out the no. of directories/files.
+sudo su - --> to move to root user.
+-v --> display the msg.
+-p --> represents parent root.
+-l --> long listing.
+-a --> all.
+-m --> mode of the directory.
+-lh --> human readable format.
+tree --> displays the files or directories info in tree structure.
+cd .. --> moves to the back directory.
+-lt --> displays the data in order with respect to the accessed timing.
+-ltr --> reverse order for -lt.
+pwd --> prints working directory name.
+uname --> displays the user name.
+clear --> clears the screen.
+exit --> exit from the current user.
+touch --> creates the file with zero bytes.
+yum --> to install packages.
+find --> to search the directories.
+	e.g, find . -type f --> to search all the files in current directory.
+	     find . -type f -empty --> to search empty files in current directory.
+	     find . -type d -empty --> to search empty directories in current directory.
+umask --> umask value for root user is 0022.
+	  umask value for normal user is 0002. 	to set the umask value or to know the umask value we will use this command.
+*Base permissions for dir is 0777. to get default directory permissions of root user subtract the umask value from 0777.
+*Base permissions for file is 0666. in the same way while subtracting the umask value of root/normal user from 0666, we will
+get default file permissions.
+chmod --> to change the permissions of directory/file.
+	chmod permissions directory/file name.
+    eg.,chmod    544         DevOps
+chown --> to change the owner/user for directory/file.
+chgrp --> to change the group for directory/file.
+note: only root user have permission to use chown and chgrp commands.
+cp: it is used to copy file/directory from one place to another place.
+mv: it is used to move file/directory from one place to another place. and also used to rename directory/file name..
+file: it is used to know the file details.
+wc: word count
+ln: it is used to create link between files.
+
+editors:-
+---------
+vi
+vim
+nano
+gedit
